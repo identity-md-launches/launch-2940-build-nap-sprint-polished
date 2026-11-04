@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f3e7" />
+    <title>Nap or Sprint? · The tiny hamster prediction arcade</title>
+    <meta name="description" content="One real hamster. Your next great call. Predict Squeekchain rounds, outwit Professor Whiskers, duel friends, and collect art made from the wheel." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nap or Sprint?" />
+    <meta property="og:description" content="A tiny prediction arcade powered by a real hamster. Make your call, outwit the Professor, collect a little art." />
+    <meta property="og:image" content="./og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preload" href="./fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to game</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#play" aria-label="Squeek arcade, home"><span id="brand-mark"></span><span>Squeek<span class="brand-light"> arcade</span></span></a>
+        <div class="header-tools">
+          <button class="icon-button" id="sound-toggle" type="button" aria-label="Enable sound effects" aria-pressed="false"></button>
+          <button class="icon-button" id="help-button" type="button" aria-label="How to play"></button>
+          <button class="profile-button" id="profile-button" type="button" aria-label="Profile and saved progress"></button>
+        </div>
+      </header>
+      <main id="main" tabindex="-1">
+        <div class="intro">
+          <div><h1>Nap <span class="title-or">or</span> Sprint<span class="title-question">?</span></h1><p>A prediction arcade powered by a real hamster.</p></div>
+          <span class="chain-label"><span class="status-dot"></span> Powered by Squeekchain</span>
+        </div>
+        <nav class="view-nav" aria-label="Game views">
+          <button type="button" class="nav-button is-active" data-view="play" aria-current="page">Play</button>
+          <button type="button" class="nav-button" data-view="gallery">Art collection <span id="gallery-count">0</span></button>
+          <button type="button" class="nav-button" data-view="achievements">Badges <span id="badge-count">0</span></button>
+          <button type="button" class="nav-button" data-view="duels">Duels</button>
+        </nav>
+        <div id="storage-warning" class="notice warning" hidden></div>
+        <div id="view-content"><div class="initial-loading"><span class="loading-dot"></span> Checking on a small, important hamster…</div></div>
+      </main>
+      <footer class="site-footer">
+        <div><span class="footer-heart" aria-hidden="true">♡</span> Naps are healthy. The wheel is always his choice.</div>
+        <p>A <a href="https://squeekchain.com/genesis" target="_blank" rel="noopener noreferrer">Squeekchain Genesis</a> game by <a href="https://x.com/LoriSnyder8612" target="_blank" rel="noopener noreferrer">@LoriSnyder8612</a></p>
+        <a href="https://sepolia.squeekchain.com/status" target="_blank" rel="noopener noreferrer">Chain status <span aria-hidden="true">↗</span></a>
+      </footer>
+    </div>
+    <div class="toast-region" id="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
+    <dialog id="game-dialog" aria-labelledby="dialog-title"><button type="button" class="icon-button dialog-close" id="dialog-close" aria-label="Close dialog"></button><div id="dialog-content"></div><div class="toast-region" id="dialog-toast" role="status" aria-live="polite" aria-atomic="true" hidden></div></dialog>
+    <noscript><div class="noscript-message">This little arcade needs JavaScript to read the live wheel and save predictions. Enable JavaScript and reload to play.</div></noscript>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

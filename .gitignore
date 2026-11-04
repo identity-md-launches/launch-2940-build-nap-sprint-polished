@@ -1,0 +1,8 @@
+# Explicit ignore-path budget: this file <= 512 bytes.
+# Generated dependencies/caches at every depth; dist is a deliverable.
+**/node_modules/
+**/.vite/
+**/.cache/
+**/coverage/
+**/*.tsbuildinfo
+test/scratch/
